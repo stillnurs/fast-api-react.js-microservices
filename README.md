@@ -17,5 +17,5 @@ Set up the front-end part (everything descripted in followed Readme file)
 
 ### Postman or UI
 
-You can test back-end apps by using a Postman or other equivalent tools
+You can test back-end apps by using a Postman or other similar tools
 Or you can use UI written in ReactJs to test it in [http://localhost:3000](http://localhost:3000)
