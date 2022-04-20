@@ -15,7 +15,7 @@ except Exception:
 while True:
     try:
         results = redis.xreadgroup(group, key, {key: '>'}, None)
-        
+
         if results != []:
             for result in results:
                 obj = result[1][0][1]
@@ -24,9 +24,9 @@ while True:
                     print(product)
                     product.quantity = product.quantity - int(obj['quantity'])
                     product.save()
-                except Exception:    
+                except Exception:
                     redis.xadd('refund_order', obj, '*')
-                
+
     except Exception as e:
         print(e)
     time.sleep(1)

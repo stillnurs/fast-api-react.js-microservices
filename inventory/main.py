@@ -36,15 +36,17 @@ class Product(HashModel):
 def all():
     return [format(pk) for pk in Product.all_pks()]
 
-def format(pk:str):
+
+def format(pk: str):
     product = Product.get(pk)
-    
+
     return {
         'id': product.pk,
-        'name':product.name,
-        'price':product.price,
-        'quantity':product.quantity
+        'name': product.name,
+        'price': product.price,
+        'quantity': product.quantity
     }
+
 
 @app.post('/products')
 def create(product: Product):
@@ -52,9 +54,10 @@ def create(product: Product):
 
 
 @app.get('/products/{pk}')
-def get(pk:str):
+def get(pk: str):
     return Product.get(pk)
 
+
 @app.delete('/products/{pk}')
-def delete(pk:str):
+def delete(pk: str):
     return Product.delete(pk)
